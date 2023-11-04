@@ -1,34 +1,20 @@
-#include "lists.h"
+#!/usr/bin/python3
+# 12-fizzbuzz.py
 
-/**
- * insert_node - Inserts a number into a sorted singly-linked list.
- * @head: A pointer the head of the linked list.
- * @number: The number to insert.
- *
- * Return: If the function fails - NULL.
- * Otherwise - a pointer to the new node.
- */
-listint_t *insert_node(listint_t **head, int number)
-{
-	listint_t *node = *head, *new;
 
-	new = malloc(sizeof(listint_t));
-	if (new == NULL)
-		return (NULL);
-	new->n = number;
+def fizzbuzz():
+    """Print the numbers from 1 to 100 separated by a space.
 
-	if (node == NULL || node->n >= number)
-	{
-		new->next = node;
-		*head = new;
-		return (new);
-	}
-
-	while (node && node->next && node->next->n < number)
-		node = node->next;
-
-	new->next = node->next;
-	node->next = new;
-
-	return (new);
-}
+    For multiples of three, print Fizz instead of the number.
+    For multiples of five, print Buzz instead of the number.
+    For multiples of three and five, print FizzBuzz instead of the number.
+    """
+    for number in range(1, 101):
+        if number % 3 == 0 and number % 5 == 0:
+            print("FizzBuzz ", end="")
+        elif number % 3 == 0:
+            print("Fizz ", end="")
+        elif number % 5 == 0:
+            print("Buzz ", end="")
+        else:
+            print("{} ".format(number), end="")
