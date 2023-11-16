@@ -3,5 +3,5 @@
 
 
 class Square:
-        ''' creates an empty square'''
-            pass
+    ''' creates an empty square'''
+    pass
